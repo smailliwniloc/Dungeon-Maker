@@ -1,7 +1,7 @@
 import pygame as pg
 import pygame_textinput
 import sys
-from network import Network
+from server.network import Network
 from inputBox import InputBox
 from button import Button
 import aesthetics as ae
