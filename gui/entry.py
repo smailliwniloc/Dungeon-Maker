@@ -1,4 +1,4 @@
-import pygame
+import pygame as pg
 import gui.text
 import gui.image
 
@@ -31,7 +31,7 @@ class Entry:
         return self.text.text
 
     def mouse_over(self):
-        if self.rect.collidepoint(pygame.mouse.get_pos()):
+        if self.rect.collidepoint(pg.mouse.get_pos()):
             return True
         return False
 
@@ -47,7 +47,7 @@ class Entry:
     def handle_event(self, event):
         if self.active:
             key_uni = event.unicode
-            key_str = pygame.key.name(event.key)
+            key_str = pg.key.name(event.key)
 
             if key_str == "backspace":
                 self.backspace = True  # deletes characters in draw()
@@ -55,14 +55,14 @@ class Entry:
                 self.text.change_text(self.text.text + " ")
             else:
                 if self.text.graphic_text.get_width() < self.rect[2]-self.text_padx*3 and key_uni.isprintable():
-                    if pygame.key.get_mods() & pygame.KMOD_CAPS or pygame.key.get_mods() & pygame.KMOD_SHIFT:
+                    if pg.key.get_mods() & pg.KMOD_CAPS or pg.key.get_mods() & pg.KMOD_SHIFT:
                         self.text.change_text(self.text.text+key_uni.upper())
                     else:
                         self.text.change_text(self.text.text+key_uni.lower())
 
     def handle_event_up(self, event):
         if self.active:
-            key_str = pygame.key.name(event.key)
+            key_str = pg.key.name(event.key)
 
             if key_str == "backspace":
                 self.backspace = False

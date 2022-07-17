@@ -1,15 +1,15 @@
-import pygame
+import pygame as pg
 
 
 class Panel:
     def __init__(self, rect, transparency, color):
-        self.rect = pygame.Rect(rect)
+        self.rect = pg.Rect(rect)
         self.color = color
         self.transparency = transparency
         self.surface = self.make_surface()
 
     def reset_rect(self, rect):
-        self.rect = pygame.Rect(rect)
+        self.rect = pg.Rect(rect)
         self.surface = self.make_surface()
 
     def reset_width(self, width):
@@ -17,7 +17,7 @@ class Panel:
         self.surface = self.make_surface()
 
     def make_surface(self):
-        surface = pygame.Surface([self.rect[2], self.rect[3]])
+        surface = pg.Surface([self.rect[2], self.rect[3]])
         surface.set_alpha(self.transparency)
         return surface
 

@@ -1,11 +1,11 @@
-import pygame
+import pygame as pg
 import gui.text
 
 
 class TextButton:
     def __init__(self, rect, start_transparency, hover_transparancy,
                  text, text_size, text_color, text_font):
-        self.rect = pygame.Rect(rect)
+        self.rect = pg.Rect(rect)
 
         self.text = gui.Text(text, text_size, text_color, text_font, self.rect.x, self.rect.y)
         # Moving text to center in button
@@ -22,7 +22,7 @@ class TextButton:
         self.function = function
 
     def mouse_over(self):
-        if self.rect.collidepoint(pygame.mouse.get_pos()):
+        if self.rect.collidepoint(pg.mouse.get_pos()):
             return True
         return False
 

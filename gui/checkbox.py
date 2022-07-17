@@ -1,4 +1,4 @@
-import pygame
+import pygame as pg
 import gui.image
 
 
@@ -14,7 +14,7 @@ class Checkbox:
         self.active = False
 
     def mouse_over(self):
-        if self.rect.collidepoint(pygame.mouse.get_pos()):
+        if self.rect.collidepoint(pg.mouse.get_pos()):
             return True
         return False
 

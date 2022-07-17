@@ -1,4 +1,4 @@
-import pygame
+import pygame as pg
 
 class Player():
     def __init__(self, x, y, width, height, color):
@@ -11,21 +11,21 @@ class Player():
         self.vel = 3
     
     def draw(self, win):
-        pygame.draw.rect(win, self.color, self.rect)
+        pg.draw.rect(win, self.color, self.rect)
 
     def move(self):
-        keys = pygame.key.get_pressed()
+        keys = pg.key.get_pressed()
 
-        if keys[pygame.K_LEFT]:
+        if keys[pg.K_LEFT]:
             self.x -= self.vel
 
-        if keys[pygame.K_RIGHT]:
+        if keys[pg.K_RIGHT]:
             self.x += self.vel
 
-        if keys[pygame.K_UP]:
+        if keys[pg.K_UP]:
             self.y -= self.vel
 
-        if keys[pygame.K_DOWN]:
+        if keys[pg.K_DOWN]:
             self.y += self.vel
 
         self.update()

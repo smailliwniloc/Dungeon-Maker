@@ -1,4 +1,4 @@
-import pygame
+import pygame as pg
 
 
 class Text:
@@ -14,12 +14,12 @@ class Text:
 
     def _config_font(self):
         try:
-            self.graphic_font = pygame.font.Font(self.font, self.size)
+            self.graphic_font = pg.font.Font(self.font, self.size)
         except OSError:  # can't read font file.
-            self.graphic_font = pygame.font.SysFont(self.font, self.size)
+            self.graphic_font = pg.font.SysFont(self.font, self.size)
 
     def _config_text(self):
-        self.graphic_text = self.graphic_font.render(self.text, True, self.colors)
+        self.graphic_text = self.graphic_font.render(self.text, True, self.color)
         self.rect = self.graphic_text.get_rect().move(self.x, self.y)
 
     def get_rect(self):

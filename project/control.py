@@ -1,7 +1,7 @@
 import constants
 import paths
 
-import pygame
+import pygame as pg
 import project.menus as menus
 import project.test2 as game
 # import project.game.controller as game
@@ -10,16 +10,16 @@ import project.test2 as game
 class ApplicationController:
     """ runs the whole application, changing section running based on state """
     def __init__(self):
-        pygame.init()
+        pg.init()
 
         # Icon Setup
-        icon = pygame.image.load(paths.uiMenuPath + "foo.png")
+        icon = pg.image.load(paths.uiMenuPath + "foo.png")
         icon.set_colorkey((0, 0, 0))
-        pygame.display.set_icon(icon)  # before set_mode as suggested in pygame docs
+        pg.display.set_icon(icon)  # before set_mode as suggested in pygame docs
 
         # Display Setup
-        self.display = pygame.display.set_mode(constants.DISPLAY_SIZE)
-        pygame.display.set_caption(constants.DISPLAY_NAME)
+        self.display = pg.display.set_mode(constants.DISPLAY_SIZE)
+        pg.display.set_caption(constants.DISPLAY_NAME)
 
         # General Setup
         self.state = "menu"
@@ -75,6 +75,6 @@ class ApplicationController:
         # self.game_reference = None
 
     def quit(self):
-        pygame.quit()
+        pg.quit()
         quit()
         
