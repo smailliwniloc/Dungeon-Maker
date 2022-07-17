@@ -1,5 +1,5 @@
 import webbrowser
-import pygame
+import pygame as pg
 
 import paths
 import constants
@@ -16,6 +16,7 @@ class Menu:
 
         # Background Setup
         self.background = gui.Image(paths.uiMenuPath + "foo.png", 0, 0)
+        self.background.resize(self.display.get_size())
 
         # Title / Header setup
         self.title = gui.Text(
@@ -24,13 +25,13 @@ class Menu:
             250, 150)
 
         # Making panel around text, with padding.
-        title_rect = pygame.Rect(self.title.get_rect())
+        title_rect = pg.Rect(self.title.get_rect())
         title_padding = 5
         title_rect.x -= title_padding
         title_rect.width += title_padding*2
         self.title_panel = gui.Panel(title_rect, 150, constants.COLORS["magenta"])
 
-        self.title_logo = pygame.image.load(paths.uiMenuPath + "foo.png")
+        self.title_logo = pg.image.load(paths.uiMenuPath + "foo.png")
         self.logo_panel = gui.Panel([title_rect.right, title_rect.y, title_rect.height, title_rect.height],
                                            150, (0, 0, 0))
 
@@ -77,11 +78,11 @@ class Menu:
         return self.state
 
     def handle_events(self):
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+        for event in pg.event.get():
+            if event.type == pg.QUIT:
                 self.state = "quit"
 
-            elif event.type == pygame.MOUSEBUTTONDOWN:
+            elif event.type == pg.MOUSEBUTTONDOWN:
                 if self.show_about:  # chanel inputs to about message only.
                     self.about.handle_click()
 
@@ -112,7 +113,7 @@ class Menu:
         if self.show_about:
             self.about.draw(self.display)
 
-        pygame.display.update()
+        pg.display.update()
 
 
 class WebLink:
@@ -136,7 +137,7 @@ class WebLink:
         self.hover_text.change_text(self.hover_text.text)  # acts as update, font must be re-rendered to show underline.
 
     def mouse_over(self):
-        return self.rect.collidepoint(pygame.mouse.get_pos())
+        return self.rect.collidepoint(pg.mouse.get_pos())
 
     def check_clicked(self):
         if self.mouse_over():
