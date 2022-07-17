@@ -4,7 +4,7 @@ import constants
 import paths
 
 import pygame
-# import project.menus as menus
+import project.menus as menus
 # import project.game.controller as game
 
 print("Finished imports from control.py")
@@ -16,7 +16,7 @@ class ApplicationController:
         pygame.init()
 
         # Icon Setup
-        icon = pygame.image.load(paths.uiMenuPath + "logo.png")
+        icon = pygame.image.load(paths.uiMenuPath + "foo.png")
         icon.set_colorkey((0, 0, 0))
         pygame.display.set_icon(icon)  # before set_mode as suggested in pygame docs
 
@@ -52,8 +52,8 @@ class ApplicationController:
 
     def run_menu(self):
         print("in run_menu")
-        # menu = menus.Menu(self.display)  # takes control while section running, control returns here after.
-        # self.state = menu.get_state()
+        menu = menus.Menu(self.display)  # takes control while section running, control returns here after.
+        self.state = menu.get_state()
 
     def run_loadgame(self):
         print("in run_loadgame")
