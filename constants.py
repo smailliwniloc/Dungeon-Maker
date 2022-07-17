@@ -13,6 +13,7 @@ COLORS = {
     "blue": (0, 0, 255),
     "indigo": (75, 0, 130),
     "magenta": (255, 0, 255),
+    "panel": (255, 0, 0)
 }
 
 FONTS = {"main": paths.fontPath + "SourceSansPro-Light.ttf",
@@ -23,4 +24,4 @@ FONTS = {"main": paths.fontPath + "SourceSansPro-Light.ttf",
              {"large": 20,
               "medium": 15,
               "small": 12},
-         "color": COLORS["white"]}
+         "color": COLORS["blue"]}

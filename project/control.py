@@ -2,6 +2,7 @@ import constants
 import paths
 
 import pygame as pg
+from project.chat_panel import ChatPanel
 import project.menus as menus
 import project.test2 as game
 # import project.game.controller as game
@@ -52,7 +53,8 @@ class ApplicationController:
         self.state = menu.get_state()
 
     def run_loadgame(self):
-        print("in run_loadgame")
+        chat = ChatPanel((constants.DISPLAY_SIZE[0]/2, constants.DISPLAY_SIZE[1]), self.display)
+        self.state = chat.get_state()
         # load_game = menus.LoadGame(self.display)
         # self.state = load_game.get_state()
         # self.game_reference = load_game.get_game()

@@ -2,7 +2,7 @@ import pygame as pg
 import sys
 # import server 
 from project.inputBox import InputBox
-import gui.button
+import gui
 import constants
 import project.aesthetics as ae
 # import pickle
@@ -42,6 +42,8 @@ def main():
                         constants.FONTS["sizes"]["large"], constants.FONTS["color"], constants.FONTS["main"])
     b.set_function(input_rect.clearHistory)
 
+    panel = gui.Panel((10, 100, 40, 40), 100, constants.COLORS["red"])
+
     run = True
 
     while run:
@@ -78,6 +80,7 @@ def main():
 
         b.draw(screen)
 
+        panel.draw(screen)
 
         input_rect.printHistory(screen)
 
