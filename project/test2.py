@@ -12,7 +12,6 @@ pg.init()
 
 
 def main():
-    print("Entering test2 main")
     clock = pg.time.Clock()
 
     # Dimensions

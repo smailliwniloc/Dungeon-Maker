@@ -35,8 +35,8 @@ class Menu:
                                            150, (0, 0, 0))
 
         # Menu location (New, Load and Leaderboard)
-        self.menux = 425
-        self.menuy = 370
+        self.menux = display.get_width()/3
+        self.menuy = display.get_height()/3
 
         # GUI Menu Setup
         self.newgame_button = gui.TextButton(
@@ -91,7 +91,6 @@ class Menu:
                     self.state = "load_game"
                 elif self.leaderboard_button.check_clicked():
                     self.state = "leaderboard"
-
                 elif self.about_button.check_clicked():
                     self.show_about = True
 
@@ -176,22 +175,22 @@ class About:
             constants.FONTS["sizes"]["medium"], constants.FONTS["color"], constants.FONTS["main"],
             self.rect[0] + 5, self.rect[1] + 40)
 
-        self.project_github = WebLink("https://github.com/Ben-Ryder/Conqueror-of-Empires",
-                                      "https://github.com/Ben-Ryder/Conqueror-of-Empires",
+        self.project_github = WebLink("https://github.com/smailliwniloc/Dungeon-Maker",
+                                      "https://github.com/smailliwniloc/Dungeon-Maker",
                                       self.rect[0] + 5, self.rect[1] + 60)
 
         self.project_message = gui.Text(
-            "(feel free to suggest improvements, rasie issues etc)",
+            "(feel free to suggest improvements, raise issues etc)",
             constants.FONTS["sizes"]["small"], (200, 200, 200), constants.FONTS["main"],
             self.rect[0] + 5, self.rect[1] + 77)
 
         self.personal_title = gui.Text(
-            "Developed by Ben Ryder",
+            "Developed by Colin Williams",
             constants.FONTS["sizes"]["medium"], constants.FONTS["color"], constants.FONTS["main"],
             self.rect[0] + 5, self.rect[1] + 110)
 
-        self.personal_site = WebLink("https://benryder.me",
-                                     "https://benryder.me",
+        self.personal_site = WebLink("https://colinwilliams.me",
+                                     "https://colinwilliams.me",
                                      self.rect[0] + 5, self.rect[1] + 130)
 
         self.version = gui.Text(

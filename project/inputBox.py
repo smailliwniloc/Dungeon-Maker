@@ -76,7 +76,6 @@ class InputBox:
         self.history = []
 
 def main():
-    print("inside inputBox main")
     clock = pg.time.Clock()
     input_box1 = InputBox(100, 100, 140, 32)
     input_box2 = InputBox(100, 300, 140, 32)

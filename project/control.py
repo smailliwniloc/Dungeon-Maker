@@ -1,13 +1,9 @@
-print("Entered control.py")
-
 import constants
 import paths
 
 import pygame
 import project.menus as menus
 # import project.game.controller as game
-
-print("Finished imports from control.py")
 
 
 class ApplicationController:
@@ -51,7 +47,6 @@ class ApplicationController:
         self.quit()
 
     def run_menu(self):
-        print("in run_menu")
         menu = menus.Menu(self.display)  # takes control while section running, control returns here after.
         self.state = menu.get_state()
 
