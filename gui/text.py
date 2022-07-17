@@ -2,12 +2,12 @@ import pygame
 
 
 class Text:
-    def __init__(self, text, size, colour, font, x, y):
+    def __init__(self, text, size, color, font, x, y):
         self.text = text
         self.x = x
         self.y = y
         self.size = size
-        self.colour = colour
+        self.color = color
         self.font = font
         self._config_font()
         self._config_text()
@@ -19,7 +19,7 @@ class Text:
             self.graphic_font = pygame.font.SysFont(self.font, self.size)
 
     def _config_text(self):
-        self.graphic_text = self.graphic_font.render(self.text, True, self.colour)
+        self.graphic_text = self.graphic_font.render(self.text, True, self.colors)
         self.rect = self.graphic_text.get_rect().move(self.x, self.y)
 
     def get_rect(self):

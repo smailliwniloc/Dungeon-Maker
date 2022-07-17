@@ -2,9 +2,9 @@ import pygame
 
 
 class Panel:
-    def __init__(self, rect, transparency, colour):
+    def __init__(self, rect, transparency, color):
         self.rect = pygame.Rect(rect)
-        self.colour = colour
+        self.color = color
         self.transparency = transparency
         self.surface = self.make_surface()
 
@@ -22,5 +22,5 @@ class Panel:
         return surface
 
     def draw(self, display):
-        self.surface.fill(self.colour)
+        self.surface.fill(self.color)
         display.blit(self.surface, [self.rect[0], self.rect[1]])

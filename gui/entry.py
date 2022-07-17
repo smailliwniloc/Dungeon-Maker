@@ -6,7 +6,7 @@ import gui.image
 class Entry:
     def __init__(self, rest_image, hover_image,
                  rest_focused_image, hover_focused_image,
-                 initial_text, text_size, text_colour, text_font, text_padx, text_pady,
+                 initial_text, text_size, text_color, text_font, text_padx, text_pady,
                  sticky, x, y):
 
         self.rest_image = gui.Image(rest_image, x, y)
@@ -21,7 +21,7 @@ class Entry:
         self.text_pady = text_pady
         self.active = False
         self.sticky = sticky  # sticky if text should remain when entry re-clicked on.
-        self.text = gui.Text(initial_text, text_size, text_colour, text_font,
+        self.text = gui.Text(initial_text, text_size, text_color, text_font,
                                     self.rect.x+self.text_padx, self.rect.y+self.text_pady)
         self.backspace = False  # allows for continuous backspace. (as long as handle_event_up() is also called)
         self.backspace_delay = 7  # READ ME!! - works as delayed by x frames, for higher frame rates increase delay.
