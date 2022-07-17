@@ -12,6 +12,7 @@ pg.init()
 
 
 def main():
+    print("Entering test2 main")
     clock = pg.time.Clock()
 
     # Dimensions
@@ -47,7 +48,7 @@ def main():
     while run:
         
         for event in pg.event.get():
-            print(event)
+            # print(event)
             if event.type == pg.QUIT:
                 run = False
                 pg.quit()
@@ -86,4 +87,6 @@ def main():
 
         clock.tick(60)
 
-main()
+if __name__ == "__main__":  
+    main()
+    pg.quit()

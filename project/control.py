@@ -1,9 +1,13 @@
+print("Entered control.py")
+
 import constants
 import paths
 
 import pygame
-import project.menus as menus
-import project.game.controller as game
+# import project.menus as menus
+# import project.game.controller as game
+
+print("Finished imports from control.py")
 
 
 class ApplicationController:
@@ -47,30 +51,35 @@ class ApplicationController:
         self.quit()
 
     def run_menu(self):
-        menu = menus.Menu(self.display)  # takes control while section running, control returns here after.
-        self.state = menu.get_state()
+        print("in run_menu")
+        # menu = menus.Menu(self.display)  # takes control while section running, control returns here after.
+        # self.state = menu.get_state()
 
     def run_loadgame(self):
-        load_game = menus.LoadGame(self.display)
-        self.state = load_game.get_state()
-        self.game_reference = load_game.get_game()
+        print("in run_loadgame")
+        # load_game = menus.LoadGame(self.display)
+        # self.state = load_game.get_state()
+        # self.game_reference = load_game.get_game()
 
     def run_newgame(self):
-        new_game = menus.NewGame(self.display)
-        self.state = new_game.get_state()
-        self.game_reference = new_game.get_game()
+        print("in run_newgame")
+        # new_game = menus.NewGame(self.display)
+        # self.state = new_game.get_state()
+        # self.game_reference = new_game.get_game()
 
     def run_leaderboard(self):
-        leaderboard = menus.Leaderboard(self.display)
-        self.state = leaderboard.get_state()
+        print("in run_leaderboard")
+        # leaderboard = menus.Leaderboard(self.display)
+        # self.state = leaderboard.get_state()
 
     def run_game(self):
-        if self.game_reference is None:
-            raise Exception("No Game Selected")
+        print("in run_game")
+        # if self.game_reference is None:
+        #     raise Exception("No Game Selected")
 
-        running_game = game.Controller(self.display, self.game_reference)
-        self.state = running_game.play()  # takes control, returns when game is complete.
-        self.game_reference = None
+        # running_game = game.Controller(self.display, self.game_reference)
+        # self.state = running_game.play()  # takes control, returns when game is complete.
+        # self.game_reference = None
 
     def quit(self):
         pygame.quit()
