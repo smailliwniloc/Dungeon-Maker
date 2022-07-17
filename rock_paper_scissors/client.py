@@ -1,5 +1,5 @@
 import pygame
-from network import Network
+from server.network import Network
 import pickle
 # from player import Player
 pygame.font.init()

@@ -1,10 +1,10 @@
 import pygame as pg
 import sys
 # import server 
-from inputBox import InputBox
+from project.inputBox import InputBox
 import gui.button
 import constants
-import aesthetics as ae
+import project.aesthetics as ae
 # import pickle
 pg.init()
 
@@ -39,8 +39,9 @@ def main():
     input_rect = InputBox((1 + 1/70)*width - history_width, (69/70)*height - base_font.get_height(), (33/35)*history_width, 1.1*base_font.get_height(), text='Type Here')
 
     b = gui.TextButton((10, 40, 50, 20), 0, 100, "Clear", 
-                        constants.FONTS["sizes"]["large"], constants.FONTS["colour"], constants.FONTS["main"])
-    
+                        constants.FONTS["sizes"]["large"], constants.FONTS["color"], constants.FONTS["main"])
+    b.set_function(input_rect.clearHistory)
+
     run = True
 
     while run:
@@ -52,7 +53,7 @@ def main():
                 pg.quit()
                 sys.exit()
             input_rect.handle_event(event)
-            b.handle_event(event, input_rect)
+            b.check_clicked()
             if event.type == pg.VIDEORESIZE:
                 screen = pg.display.set_mode((event.w, event.h), pg.RESIZABLE)
                 pg.display.set_caption("Test2")

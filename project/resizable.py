@@ -1,6 +1,6 @@
 import pygame, sys
 from pygame.locals import *
-from aesthetics import *
+from project.aesthetics import *
 
 
 # Data Definition

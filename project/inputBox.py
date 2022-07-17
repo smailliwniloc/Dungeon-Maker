@@ -1,6 +1,6 @@
 import pygame as pg
-import aesthetics as ae
-from aesthetics import blit_text
+import project.aesthetics as ae
+from project.aesthetics import blit_text
 
 
 pg.init()
@@ -71,6 +71,9 @@ class InputBox:
             # screen.blit(text_surface, (self.rect.x+5, vert-text_surface.get_height()))
             ae.blit_text(screen, s, (self.rect.x+5, vert-text_surface.get_height()))
             vert -= text_surface.get_height()
+
+    def clearHistory(self):
+        self.history = []
 
 def main():
     clock = pg.time.Clock()
