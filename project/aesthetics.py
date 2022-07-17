@@ -12,6 +12,7 @@ GREEN = (0,255,0)
 
 COLOR_INACTIVE = pg.Color('lightskyblue3')
 COLOR_ACTIVE = pg.Color('dodgerblue2')
+pg.font.init()
 FONT = pg.font.SysFont('calibri', 20)
 
 

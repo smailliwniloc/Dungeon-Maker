@@ -1,11 +1,11 @@
 import pygame as pg
-import pygame_textinput
 import sys
-from server.network import Network
+# import server 
 from inputBox import InputBox
-from button import Button
+import gui.button
+import constants
 import aesthetics as ae
-import pickle
+# import pickle
 pg.init()
 
 
@@ -38,7 +38,8 @@ def main():
     # create textbox rectangle
     input_rect = InputBox((1 + 1/70)*width - history_width, (69/70)*height - base_font.get_height(), (33/35)*history_width, 1.1*base_font.get_height(), text='Type Here')
 
-    b = Button(10, 40, 50, 20, "Clear")
+    b = gui.TextButton((10, 40, 50, 20), 0, 100, "Clear", 
+                        constants.FONTS["sizes"]["large"], constants.FONTS["colour"], constants.FONTS["main"])
     
     run = True
 
