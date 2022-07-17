@@ -15,7 +15,7 @@ class Menu:
         self.game_reference = None
 
         # Background Setup
-        self.background = gui.Image(paths.uiMenuPath + "foo.png", 0, 0)
+        self.background = gui.Image(paths.uiMenuPath + "anyos.png", 0, 0)
         self.background.resize(self.display.get_size())
 
         # Title / Header setup

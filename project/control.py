@@ -3,6 +3,7 @@ import paths
 
 import pygame
 import project.menus as menus
+import project.test2 as game
 # import project.game.controller as game
 
 
@@ -57,10 +58,7 @@ class ApplicationController:
         # self.game_reference = load_game.get_game()
 
     def run_newgame(self):
-        print("in run_newgame")
-        # new_game = menus.NewGame(self.display)
-        # self.state = new_game.get_state()
-        # self.game_reference = new_game.get_game()
+        game.main()
 
     def run_leaderboard(self):
         print("in run_leaderboard")
