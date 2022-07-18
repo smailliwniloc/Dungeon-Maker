@@ -53,6 +53,7 @@ class ApplicationController:
         self.state = menu.get_state()
 
     def run_loadgame(self):
+        print("running run_loadgame")
         chat = ChatPanel((constants.DISPLAY_SIZE[0]/2, constants.DISPLAY_SIZE[1]), self.display)
         self.state = chat.get_state()
         # load_game = menus.LoadGame(self.display)

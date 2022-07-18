@@ -59,6 +59,9 @@ class ChatPanel:
         self.display = pg.Surface(size)
         self.display.fill(constants.COLORS["white"])
 
+        self.entry = gui.Entry("Type Here", constants.FONTS["sizes"]["medium"], constants.FONTS["color"],
+                                constants.FONTS["main"], 5, 5, 5, size[1]/2)
+
         self.chat_reader = ChatEditor()
         self.slots = []
         x, y = [10, self.display.get_height() - 40]
@@ -70,15 +73,16 @@ class ChatPanel:
         self.run()
 
     def run(self):
-        self.handle_events()
-        self.draw()
+        while self.state == "load_game":
+            self.handle_events()
+            self.draw()
 
     def get_state(self):
         return self.state
 
     def handle_events(self):
         for event in pg.event.get():
-            print(event)
+            # print(event)
             if event.type == pg.QUIT:
                 self.state = "quit"
                 pg.quit()
@@ -88,9 +92,13 @@ class ChatPanel:
                 # if self.back.check_clicked():
                 #     self.state = "menu"
 
+            self.entry.handle_event(event)
+
     def draw(self):
         for slot in self.slots:
             slot.draw(self.display)
+
+        self.entry.draw(self.display)
 
         self.screen.blit(self.display, (self.screen.get_width()/2, 0))
 
