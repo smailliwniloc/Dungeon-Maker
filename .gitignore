@@ -1,6 +1,7 @@
 # Custom Ignores
 data/saved
 main.log
+main-LAPTOP5421.log
 
 # Pycharm IDE
 .idea
